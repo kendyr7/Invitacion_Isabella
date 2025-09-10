@@ -1,0 +1,26 @@
+{
+  "name": "Cumpleaños Isabella Mariana",
+  "short_name": "Isabella Mariana",
+  "description": "Te invitamos a celebrar con nosotros el primer año de Isabella",
+  "icons": [
+    {
+      "src": "/favicon-16x16.png",
+      "sizes": "16x16",
+      "type": "image/png"
+    },
+    {
+      "src": "/favicon-32x32.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    },
+    {
+      "src": "/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    }
+  ],
+  "theme_color": "#df6d79",
+  "background_color": "#ffffff",
+  "display": "standalone",
+  "start_url": "/"
+}
