@@ -190,13 +190,15 @@ export default function HomePage() {
           <div 
             id="tiara-section"
             data-animate
-            className={`flex flex-col items-center mt-8 mb-6 transition-all duration-1000 transform ${
+            className={`flex flex-row items-center justify-center -space-x-4 mt-8 mb-6 transition-all duration-1000 transform ${
               visibleElements.has('tiara-section') 
                 ? 'opacity-100 translate-y-0 rotate-0' 
                 : 'opacity-100 translate-y-0 rotate-0'
             }`}
           >
-            <Image src="/tiara.png" alt="Tiara" width={100} height={100} data-ai-hint="tiara crown" className="drop-shadow-lg animate-bounce-slow"/>
+            <Image src="/Plim_pink.png" alt="Plim Pink" width={120} height={120} data-ai-hint="plim pink character" className="drop-shadow-lg animate-bounce-slow z-10"/>
+            <Image src="/Plim.png" alt="Plim" width={120} height={120} data-ai-hint="plim character" className="drop-shadow-lg animate-bounce-slow z-20"/>
+            <Image src="/Plim_bunny.png" alt="Plim Bunny" width={120} height={120} data-ai-hint="plim bunny character" className="drop-shadow-lg animate-bounce-slow z-10"/>
           </div>
                    
           <EventDateDisplay 
