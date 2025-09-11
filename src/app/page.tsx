@@ -76,7 +76,7 @@ export default function HomePage() {
   const [isEnvelopeAnimating, setIsEnvelopeAnimating] = useState(false);
   const [showBackToTop, setShowBackToTop] = useState(false);
   const audioSrc = "/audio/paradise-coldplay.mp3"; 
-  const eventTargetDate = "2025-07-27T19:00:00-06:00";
+  const eventTargetDate = "2025-09-27T19:00:00-05:00"; // Dallas, TX timezone (CDT)
   const visibleElements = useScrollAnimation();
 
   useEffect(() => {
@@ -167,8 +167,18 @@ export default function HomePage() {
       <div className="relative z-10 flex flex-col items-center text-center max-w-2xl w-full bg-background/80 dark:bg-neutral-900/80 backdrop-blur-md rounded-xl shadow-2xl my-8 animate-in fade-in slide-in-from-bottom-10 duration-700 overflow-hidden border-2 border-[transparent] hover:border-[transparent] transition-colors duration-300">
       
         
-        <div className="relative z-10 flex flex-col items-center text-center space-y-8 sm:space-y-10 p-4 sm:p-8 mt-[16rem]">
-          <p className="font-headline text-1xl sm:text-2xl text-foreground mb-4 tracking-wide animate-fade-in-up text-visible">
+        <div className="relative z-10 flex flex-col items-center text-center space-y-8 sm:space-y-10 p-4 sm:p-8 mt-8">
+          <div className="mb-6 sm:mb-8">
+            <Image
+              src="/isabella.jpg"
+              alt="Isabella"
+              width={200}
+              height={200}
+              className="rounded-full mx-auto shadow-lg animate-fade-in-up"
+              priority
+            />
+          </div>
+          <p className="font-headline text-xl sm:text-2xl text-foreground mb-4 tracking-wide animate-fade-in-up text-visible font-medium sm:font-normal">
             Celebremos el cumpleaños de
           </p>
           <AnimatedName 
@@ -197,7 +207,7 @@ export default function HomePage() {
             dayNumber="15"
             year="2025"
             time="6:00 PM"
-            location="Salón de Eventos La Terraza\nAv. Principal 123\nManagua, Nicaragua"
+            location="10054 Spice Ln Dallas, TX 75217, EE. UU."
             rsvpInfo="+1(505)8888-9999"
             className={`mb-12 transition-all duration-1000 transform ${
               visibleElements.has('date-display') 
@@ -239,12 +249,12 @@ export default function HomePage() {
               locationButtons={[
                 { 
                   text: "Waze", 
-                  url: "https://waze.com/ul?ll=12.1364,-86.2514&navigate=yes&zoom=17", 
+                  url: "https://waze.com/ul?ll=32.6593,-96.8564&navigate=yes&zoom=17", 
                   icon: <Navigation className="mr-2 h-4 w-4" />
                 },
                 { 
                   text: "Google Maps", 
-                  url: "https://maps.google.com/?q=Salón+de+Eventos+La+Terraza,+Av.+Principal+123,+Managua,+Nicaragua", 
+                  url: "https://maps.google.com/?q=10054+Spice+Ln,+Dallas,+TX+75217,+USA", 
                   icon: <MapPin className="mr-2 h-4 w-4" />
                 }
               ]}
@@ -254,8 +264,8 @@ export default function HomePage() {
                 <Image src="/champagne.png" alt="champagne Icon" width={40} height={40} className="shrink-0 animate-bounce-slow" data-ai-hint="champagne"/>
               </div>
               <div className="mt-1 space-y-1 text-center">
-                <p className="flex items-center justify-center animate-fade-in-up">Salón de Eventos La Terraza</p>
-                <p className="flex items-center justify-center animate-fade-in-up"><i>Av. Principal 123, Managua</i></p>
+                <p className="flex items-center justify-center animate-fade-in-up">10054 Spice Ln</p>
+                <p className="flex items-center justify-center animate-fade-in-up"><i>Dallas, TX 75217, EE. UU.</i></p>
                 <p className="flex items-center justify-center animate-fade-in-up"><i>6:00 PM</i></p>
               </div>
             </SectionCard>
@@ -325,7 +335,22 @@ export default function HomePage() {
 
         {/* Footer */}
         <footer className="w-full text-center py-4 bg-background/80 dark:bg-neutral-900/80 text-foreground/60 text-xs backdrop-blur-md">
-          <p className="italic animate-fade-in-up">© Creado por Kendyr Quintanilla - 2025 </p>
+          <a 
+                href="https://www.instagram.com/invitaciones_digitales_505?igsh=MW9qdXkwNG5qY2k2ZQ==" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="italic animate-fade-in-up text-foreground hover:text-primary transition-colors duration-300 flex items-center justify-center gap-2"
+              >
+                <svg 
+                  className="w-4 h-4" 
+                  fill="currentColor" 
+                  viewBox="0 0 24 24" 
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                </svg>
+                Invitaciones Digitales 505
+              </a>
         </footer>
 
       </div>

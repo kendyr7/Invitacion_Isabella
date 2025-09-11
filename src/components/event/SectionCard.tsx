@@ -36,12 +36,12 @@ const SectionCard: React.FC<SectionCardProps> = ({ title, icon, children, locati
       style={{ animationDelay: animationDelay }}
     >
       <CardHeader className="pb-3 pt-5">
-        <CardTitle className={`font-headline text-2xl sm:text-3xl text-primary flex items-center justify-center text-center ${titleClassName}`}>
+        <CardTitle className={`font-headline text-2xl font-semibold sm:text-3xl sm:font-bold text-primary flex items-center justify-center text-center ${titleClassName}`}>
           {icon && <span className="mr-3 text-accent">{icon}</span>}
           {title}
         </CardTitle>
       </CardHeader>
-      <CardContent className={`font-body text-base sm:text-lg text-foreground/90 space-y-2 text-center ${contentClassName}`}>
+      <CardContent className={`font-body font-normal text-base sm:text-lg text-foreground/90 space-y-2 text-center ${contentClassName}`}>
         {children}
         {buttons.length > 0 && (
           <div className="mt-4 text-center space-y-2">

@@ -20,7 +20,7 @@ const EventDateDisplay: FC<EventDateDisplayProps> = ({
   dayNumber,
   year,
   time = "6:00 PM",
-  location = "Salón de Eventos La Terraza\nAv. Principal 123\nManagua, Nicaragua",
+  location = "10054 Spice Ln\nDallas, TX 75217, EE. UU.",
   rsvpInfo = "RSVP to\n+1(505)8888-9999",
   className,
 }) => {
@@ -32,13 +32,13 @@ const EventDateDisplay: FC<EventDateDisplayProps> = ({
         <div className="flex justify-between items-start">
           {/* Left side - Day, Date and Time */}
           <div className="flex-1">
-            <div className="text-gray-600 text-sm font-medium uppercase tracking-wide mb-1">
+            <div className="text-gray-600 text-sm font-normal sm:font-medium uppercase tracking-wide mb-1">
               {dayName}
             </div>
-            <div className="text-4xl font-bold text-gray-800 mb-2">
+            <div className="text-4xl font-semibold sm:font-bold text-gray-800 mb-2">
               {dayNumber}
             </div>
-            <div className="text-gray-600 text-sm font-medium">
+            <div className="text-gray-600 text-sm font-normal sm:font-medium">
               {time}
             </div>
           </div>
@@ -49,11 +49,11 @@ const EventDateDisplay: FC<EventDateDisplayProps> = ({
           {/* Right side - Address and Phone */}
           <div className="flex-1 text-right">
             <div className="text-gray-700 text-sm leading-relaxed mb-3">
-              <div className="font-medium mb-1">Ubicación:</div>
+              <div className="font-normal sm:font-medium mb-1">Ubicación:</div>
               <div className="whitespace-pre-line">{location}</div>
             </div>
             <div className="text-gray-600 text-xs leading-relaxed">
-              <div className="font-medium mb-1">RSVP:</div>
+              <div className="font-normal sm:font-medium mb-1">RSVP:</div>
               <div className="whitespace-pre-line">{rsvpInfo}</div>
             </div>
           </div>

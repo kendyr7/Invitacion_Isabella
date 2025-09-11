@@ -25,7 +25,12 @@ const CountdownTimer: React.FC<CountdownTimerProps> = ({ targetDate }) => {
     if (!isClient) return;
 
     const calculateTimeLeft = () => {
-      const difference = +new Date(targetDate) - +new Date();
+      // Parse the target date with timezone information
+      const targetDateTime = new Date(targetDate);
+      const currentTime = new Date();
+      
+      // Calculate the difference in milliseconds
+      const difference = targetDateTime.getTime() - currentTime.getTime();
       let newTimeLeft: TimeLeft = {};
 
       if (difference > 0) {
@@ -86,10 +91,10 @@ const CountdownTimer: React.FC<CountdownTimerProps> = ({ targetDate }) => {
       {timerComponents.map((component, index) => (
         component.value !== undefined && (
           <span key={index} className="inline-block mx-4 sm:mx-4 transform transition-all hover:scale-110">
-            <span className="text-3xl sm:text-5xl font-headline font-bold bg-gradient-to-r from-decorative-gradientFrom to-decorative-gradientTo text-transparent bg-clip-text text-visible">
+            <span className="text-3xl sm:text-5xl font-headline font-semibold sm:font-bold bg-gradient-to-r from-decorative-gradientFrom to-decorative-gradientTo text-transparent bg-clip-text text-visible">
               {String(component.value).padStart(2, '0')}
             </span>
-            <span className="text-xs sm:text-sm text-foreground uppercase tracking-wider font-body text-visible font-bold ml-1">
+            <span className="text-xs sm:text-sm text-foreground uppercase tracking-wider font-body text-visible font-medium sm:font-bold ml-1">
               {component.label}
             </span>
           </span>

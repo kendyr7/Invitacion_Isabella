@@ -28,14 +28,14 @@ const AnimatedName: React.FC<AnimatedNameProps> = ({
       <div className="flex flex-col items-center w-full">
         {/* First Name - Isabella */}
         <p className={cn(
-          "block w-full text-center font-pretty-smile text-9xl sm:text-9xl text-primary transition-all duration-1500 ease-out relative z-0",
+          "block w-full text-center font-pretty-smile text-6xl sm:text-8xl md:text-9xl text-primary transition-all duration-1500 ease-out relative z-0 font-normal",
           isVisible ? "animate-isabellaSlideIn" : "opacity-0 translate-x-[-100%] scale-90"
         )}>
           {firstName}
         </p>
         {/* Last Name - Marina */}
         <p className={cn(
-          "block w-full text-center font-ariata-display text-8xl sm:text-9xl bg-gradient-to-r from-decorative-gradientFrom to-decorative-gradientTo text-transparent bg-clip-text transition-all duration-1500 ease-out leading-[1.1] pt-4 pb-2 overflow-visible break-words z-10",
+          "block w-full text-center font-ariata-display text-5xl sm:text-7xl md:text-8xl lg:text-9xl bg-gradient-to-r from-decorative-gradientFrom to-decorative-gradientTo text-transparent bg-clip-text transition-all duration-1500 ease-out leading-[1.1] pt-4 pb-2 overflow-visible break-words z-10 font-normal",
           isVisible ? "animate-marinaSlideIn" : "opacity-0 translate-x-[100%] scale-90"
         )}>
           {lastName}
