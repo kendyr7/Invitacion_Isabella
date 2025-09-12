@@ -394,10 +394,10 @@ input[type="text"] {
   }
   40% {
     opacity: 1;
-    filter: blur(3px) drop-shadow(0 0 25px rgba(240, 216, 1, 0.555));
+    filter: blur(3px) drop-shadow(0 0 25px rgba(240, 216, 1, 0.205));
   }
   70% {
-    filter: blur(1px) drop-shadow(0 0 15px rgba(255, 208, 0, 0.918));
+    filter: blur(1px) drop-shadow(0 0 15px rgba(255, 208, 0, 0.397));
   }
   100% {
     opacity: 1;

@@ -132,7 +132,7 @@ const MusicPlayer: React.FC<MusicPlayerProps> = ({ audioSrc, className, autoPlay
       <div className="px-4 py-6">
         <div className="flex flex-col items-center space-y-4">
           {/* Timestamps */}
-           <div className="w-[50vw] flex items-center justify-between">
+           <div className="w-[60vw] flex items-center justify-between">
              <span className="text-pink-600/80 text-sm font-medium">
                {formatTime(currentTime)}
              </span>
@@ -142,7 +142,7 @@ const MusicPlayer: React.FC<MusicPlayerProps> = ({ audioSrc, className, autoPlay
            </div>
            
            {/* Progress bar */}
-           <div className="w-[50vw]">
+           <div className="w-[60vw]">
             <div 
               className="w-full h-2 bg-pink-100/80 rounded-full cursor-pointer overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-200"
               onClick={handleProgressClick}

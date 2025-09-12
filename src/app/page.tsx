@@ -29,7 +29,8 @@ import {
   Mail,
   ArrowUp,
   Navigation,
-  MapPin
+  MapPin,
+  CalendarDays
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import Head from 'next/head';
@@ -146,14 +147,14 @@ export default function HomePage() {
       ${isOpened && !isEnvelopeAnimating ? 'opacity-100' : 'opacity-0'}
     `}>
       <Head>
-        <meta property="og:title" content="🦁 Aventura Safari - Cumpleaños Isabella Mariana 🌿" />
-        <meta property="og:description" content="🐘 Únete a la aventura Safari de Isabella Mariana el 15 de febrero a las 6:00 PM. Una celebración llena de diversión en la selva 🦒🎉" />
+        <meta property="og:title" content="🦁 Aventura Safari - Primer Año de Isabella Mariana 🌿" />
+        <meta property="og:description" content="🐘 Únete a la aventura Safari de Isabella Mariana el 10 de octubre a las 6:00 PM. Una celebración llena de diversión en la selva 🦒🎉" />
         <meta property="og:image" content="/safari.png" />
         <meta property="og:url" content="invitacion-xv-victoria.vercel.app/" />
         <meta property="og:type" content="website" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="🦁 Aventura Safari - Cumpleaños Isabella Mariana 🌿" />
-        <meta name="twitter:description" content="🐘 Únete a la aventura Safari de Isabella Mariana el 15 de febrero a las 6:00 PM. Una celebración llena de diversión en la selva 🦒🎉" />
+        <meta name="twitter:title" content="🦁 Aventura Safari - Primer Año de Isabella Mariana 🌿" />
+        <meta name="twitter:description" content="🐘 Únete a la aventura Safari de Isabella Mariana el 10 de octubre a las 6:00 PM. Una celebración llena de diversión en la selva 🦒🎉" />
         <meta name="twitter:image" content="/safari.png" />
       </Head>
       <div className="relative z-10 flex flex-col items-center text-center max-w-2xl w-full bg-background/80 dark:bg-neutral-900/80 backdrop-blur-md rounded-xl shadow-2xl my-8 animate-in fade-in slide-in-from-bottom-10 duration-700 overflow-hidden border-2 border-[transparent] hover:border-[transparent] transition-colors duration-300">
@@ -175,8 +176,8 @@ export default function HomePage() {
             <Image
               src="/isabella.jpg"
               alt="Isabella"
-              width={350}
-              height={300}
+              width={250}
+              height={250}
               className="rounded-full mx-auto shadow-lg animate-fade-in-up"
               priority
             />
@@ -223,7 +224,7 @@ export default function HomePage() {
                 : 'opacity-100 translate-y-0'
             }`}
           >
-            <CardContent className="flex flex-col items-center mt-12">
+            <CardContent className="flex flex-col items-center mt-5">
               <p className="mb-12 font-headline text-lg sm:text-xl text-foreground mt-2 tracking-widest animate-fade-in-up text-visible">Tan solo faltan</p>
               <CountdownTimer targetDate={eventTargetDate} />
               <p className="font-headline text-lg sm:text-xl text-foreground mt-12 tracking-widest animate-fade-in-up text-visible">para este dia tan especial</p>
@@ -244,12 +245,77 @@ export default function HomePage() {
             year="2025"
             time="6:00 PM"
             location="10054 Spice Ln Dallas, TX 75217, EE. UU."
-            className={`mb-12 transition-all duration-1000 transform ${
+            className={`mb-8 transition-all duration-1000 transform ${
               visibleElements.has('date-display') 
                 ? 'opacity-100 translate-y-0 scale-100' 
                 : 'opacity-100 translate-y-0 scale-100'
             }`}
           />
+
+          {/* Add to Calendar Button */}
+          <div className="mb-12 flex justify-center">
+            <Button
+              onClick={() => {
+                const eventDetails = {
+                  title: "Primer Año de Isabella Mariana",
+                  start: "20251010T180000",
+                  end: "20251010T230000",
+                  location: "10054 Spice Ln Dallas, TX 75217, EE. UU.",
+                  description: "🦁 Aventura Safari - Celebración del primer año de Isabella Mariana 🌿"
+                };
+                
+                // Detect platform
+                const userAgent = navigator.userAgent || navigator.vendor || (window as any).opera;
+                const isIOS = /iPad|iPhone|iPod/.test(userAgent) && !(window as any).MSStream;
+                const isAndroid = /android/i.test(userAgent);
+                
+                let calendarUrl = '';
+                
+                if (isIOS) {
+                  // iOS Calendar URL
+                  const startDate = new Date('2025-10-10T18:00:00');
+                  const endDate = new Date('2025-10-10T23:00:00');
+                  calendarUrl = `data:text/calendar;charset=utf8,BEGIN:VCALENDAR
+VERSION:2.0
+BEGIN:VEVENT
+URL:${window.location.href}
+DTSTART:${eventDetails.start}
+DTEND:${eventDetails.end}
+SUMMARY:${eventDetails.title}
+DESCRIPTION:${eventDetails.description}
+LOCATION:${eventDetails.location}
+END:VEVENT
+END:VCALENDAR`;
+                } else if (isAndroid) {
+                  // Android Calendar Intent
+                  const startTime = new Date('2025-10-10T18:00:00').getTime();
+                  const endTime = new Date('2025-10-10T23:00:00').getTime();
+                  calendarUrl = `content://com.android.calendar/events?title=${encodeURIComponent(eventDetails.title)}&beginTime=${startTime}&endTime=${endTime}&eventLocation=${encodeURIComponent(eventDetails.location)}&description=${encodeURIComponent(eventDetails.description)}`;
+                } else {
+                  // Default to Google Calendar for desktop/web
+                  calendarUrl = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(eventDetails.title)}&dates=${eventDetails.start}/${eventDetails.end}&location=${encodeURIComponent(eventDetails.location)}&details=${encodeURIComponent(eventDetails.description)}`;
+                }
+                
+                if (isIOS) {
+                  // For iOS, create a downloadable .ics file
+                  const element = document.createElement('a');
+                  element.setAttribute('href', calendarUrl);
+                  element.setAttribute('download', 'evento-isabella.ics');
+                  element.style.display = 'none';
+                  document.body.appendChild(element);
+                  element.click();
+                  document.body.removeChild(element);
+                } else {
+                  window.open(calendarUrl, '_blank', 'noopener,noreferrer');
+                }
+              }}
+              variant="outline"
+              className="bg-primary hover:bg-primary/90 text-primary-foreground border-primary hover:border-primary/90 px-6 py-3 text-base font-medium"
+            >
+              <CalendarDays className="mr-2 h-5 w-5" />
+              Agregar al calendario
+            </Button>
+          </div>
 
           <div className="w-full animate-in fade-in duration-1000 delay-1100">
             <SectionCard 
