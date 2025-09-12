@@ -75,8 +75,8 @@ export default function HomePage() {
   const [isOpened, setIsOpened] = useState(false);
   const [isEnvelopeAnimating, setIsEnvelopeAnimating] = useState(false);
   const [showBackToTop, setShowBackToTop] = useState(false);
-  const audioSrc = "/audio/paradise-coldplay.mp3"; 
-  const eventTargetDate = "2025-09-27T19:00:00-05:00"; // Dallas, TX timezone (CDT)
+  const musicSrc = "/El%20leon%20rey%20duerme%20ya%20Dormido%20esta%20el%20leon.mp3";
+  const eventTargetDate = "2025-10-10T19:00:00-05:00"; // Dallas, TX timezone (CDT)
   const visibleElements = useScrollAnimation();
 
   useEffect(() => {
@@ -99,11 +99,10 @@ export default function HomePage() {
   
   const handleOpenEnvelope = () => {
     setIsEnvelopeAnimating(true);
-    // Después de la animación del sobre, mostrar la invitación
     setTimeout(() => {
       setIsOpened(true);
       setIsEnvelopeAnimating(false);
-    }, 800); // 800ms para la animación del sobre
+    }, 800);
   };
 
   const scrollToTop = () => {
@@ -179,28 +178,20 @@ export default function HomePage() {
             />
           </div>
           
-<div className="text-center mb-4">
-  <p className="font-headline text-xl sm:text-2xl text-foreground tracking-wide animate-fade-in-up text-visible font-medium sm:font-normal">
-    Celebremos el cumpleaños de
-  </p>
+        <div className="text-center mb-4">
+          <p className="font-headline text-xl sm:text-2xl text-foreground tracking-wide animate-fade-in-up text-visible font-medium sm:font-normal">
+            Celebremos el primer año de
+          </p>
 
-  {/* Disney effect wrapper */}
-  <div className="disney-wrapper h-45 w-auto mx-auto mt-2">
-    <img 
-      src="/fonts/Isabella.svg" 
-      alt="Isabella" 
-      className="disney-logo"
-    />
-  </div>
-</div>
-
-
-          
-          {/* <AnimatedName 
-            firstName="Isabella"
-            lastName="Mariana"
-            className="mb-6 sm:mb-8"
-          /> */}
+        {/* Disney effect wrapper */}
+          <div className="disney-wrapper h-45 w-auto mx-auto mt-2">
+            <img 
+              src="/fonts/Isabella.svg" 
+              alt="Isabella" 
+              className="disney-logo"
+            />
+          </div>
+        </div>
 
           <div 
             id="tiara-section"
@@ -215,13 +206,18 @@ export default function HomePage() {
             <Image src="/Plim.png" alt="Plim" width={120} height={120} data-ai-hint="plim character" className="drop-shadow-lg animate-bounce-slow z-20"/>
             <Image src="/Plim_bunny.png" alt="Plim Bunny" width={120} height={120} data-ai-hint="plim bunny character" className="drop-shadow-lg animate-bounce-slow z-10"/>
           </div>
+
+          {/* Music Player Component */}
+          <div className="mb-8 flex justify-center">
+            <MusicPlayer audioSrc={musicSrc} autoPlay={true} />
+          </div>
                    
           <EventDateDisplay 
             data-id="date-display"
             data-animate
-            monthName="Agosto"
-            dayName="Sábado"
-            dayNumber="15"
+            monthName="Octubre"
+            dayName="Viernes"
+            dayNumber="10"
             year="2025"
             time="6:00 PM"
             location="10054 Spice Ln Dallas, TX 75217, EE. UU."
@@ -342,6 +338,15 @@ export default function HomePage() {
           className="relative w-full bg-[url('/flowers_deco/flowers_deco.png')] bg-contain bg-no-repeat bg-bottom"
         >
           <div className="flex flex-col items-center pt-4 pb-24 px-4">
+            <div className="flex flex-col items-center w-full">
+              <Image 
+                src="/Plim2.png" 
+                alt="Plim" 
+                width={400} 
+                height={400} 
+                className="w-full h-auto drop-shadow-lg animate-fade-in-up"
+              />
+            </div>
             <div 
               id="confirmation-section"
               data-animate
@@ -352,24 +357,15 @@ export default function HomePage() {
               }`}
             >
                         
-            <div 
-              id="final-message"
-              data-animate
-              className={`mt-4 transition-all duration-1000 transform ${
-                visibleElements.has('final-message') 
-                  ? 'opacity-100 translate-y-0' 
-                  : 'opacity-0 translate-y-8'
-              }`}
-            >
-              <div className="flex flex-col items-center">
-                <Image 
-                  src="/Plim2.png" 
-                  alt="Plim" 
-                  width={120} 
-                  height={120} 
-                  className="drop-shadow-lg animate-fade-in-up"
-                />
-              </div>
+              <div 
+                id="final-message"
+                data-animate
+                className={`mt-4 transition-all duration-1000 transform ${
+                  visibleElements.has('final-message') 
+                    ? 'opacity-100 translate-y-0' 
+                    : 'opacity-0 translate-y-8'
+                }`}
+              >
               <p className="font-body text-lg sm:text-xl text-foreground/80 text-center animate-fade-in-up">¡Te esperamos! </p>
             </div>
           </div>
