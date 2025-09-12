@@ -166,23 +166,13 @@ export default function HomePage() {
           priority
           data-ai-hint="elegant background"
         />
-        {/* Monkey image at top right */}
-        <div className="absolute top-0 right-4 z-10">
-          <Image 
-            src="/monkey.png" 
-            alt="Monkey" 
-            width={150} 
-            height={80} 
-            className="drop-shadow-lg animate-fade-in-up"
-          />
-        </div>
         
         <div className="relative z-10 flex flex-col items-center text-center space-y-8 sm:space-y-10 p-4 sm:p-8 mt-8">
           <div className="mb-6 sm:mb-8">
             <Image
               src="/isabella.jpg"
               alt="Isabella"
-              width={300}
+              width={350}
               height={300}
               className="rounded-full mx-auto shadow-lg animate-fade-in-up"
               priority
