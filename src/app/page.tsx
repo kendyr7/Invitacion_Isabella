@@ -359,13 +359,21 @@ export default function HomePage() {
           <div className="w-full animate-in fade-in duration-1000 delay-[1500ms]">
             <SectionCard 
               title="Regalos" 
-              icon={<Gem size={28} className="text-foreground"/>}
               titleClassName="text-foreground"
             >
-              <p className="flex items-center justify-center gap-2">
-                <span>Amazon Link</span>
-              </p>
-              
+              <div className="text-center space-y-4">
+                <p className="text-foreground/90 mb-4">
+                  Tu compañía en este día tan especial es el mejor regalo. Pero si deseas darme un obsequio, aquí tienes algunas opciones:
+                </p>
+                <Button
+                  onClick={() => window.open('https://www.amazon.com/hz/wishlist/ls/OYNKD59VAVLT?ref_=wl_share', '_blank')}
+                  variant="outline"
+                  className="bg-primary hover:bg-primary/90 text-primary-foreground border-primary hover:border-primary/90"
+                >
+                  <Gem className="mr-2 h-4 w-4" />
+                  Ver Lista de Regalos en Amazon
+                </Button>
+              </div>
             </SectionCard>
           </div>
           
@@ -384,8 +392,8 @@ export default function HomePage() {
                 </div>
               </div>
               <div className="p-6 pt-0 font-body font-normal sm:text-lg text-white space-y-4 text-center">
-                <div className="space-y-3">
-                  <div style={{width: '97vw', margin: '0 1.5vw'}}>
+                <div className="space-y-6">
+                  <div style={{width: '90vw', margin: '0 5vw'}}>
                     <input 
                       type="text" 
                       placeholder="Ingresa tu nombre" 
@@ -393,7 +401,7 @@ export default function HomePage() {
                       id="attendee-name"
                     />
                   </div>
-                  <div style={{width: '97vw', margin: '0 1.5vw'}}>
+                  <div style={{width: '90vw', margin: '0 5vw'}}>
                     <button 
                       onClick={() => {
                         const name = (document.getElementById('attendee-name') as HTMLInputElement)?.value || 'Invitado';
@@ -401,11 +409,8 @@ export default function HomePage() {
                         const whatsappUrl = `https://wa.me/13057837691?text=${encodeURIComponent(message)}`;
                         window.open(whatsappUrl, '_blank');
                       }}
-                      className="w-full inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary hover:bg-primary/90 text-primary-foreground h-12 px-6 py-3"
+                      className="mt-4 w-full inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary hover:bg-primary/90 text-primary-foreground h-12 px-6 py-3"
                     >
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="mr-2">
-                      <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
-                    </svg>
                     Confirmar Asistencia
                     </button>
                   </div>
