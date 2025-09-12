@@ -77,7 +77,7 @@ export default function HomePage() {
   const [isEnvelopeAnimating, setIsEnvelopeAnimating] = useState(false);
   const [showBackToTop, setShowBackToTop] = useState(false);
   const musicSrc = "/El%20leon%20rey%20duerme%20ya%20Dormido%20esta%20el%20leon.mp3";
-  const eventTargetDate = "2025-10-10T19:00:00-05:00"; // Dallas, TX timezone (CDT)
+  const eventTargetDate = "2025-10-10T15:00:00-05:00"; // Dallas, TX timezone (CDT)
   const visibleElements = useScrollAnimation();
 
   useEffect(() => {
@@ -244,7 +244,7 @@ export default function HomePage() {
               dayName="Viernes"
               dayNumber="10"
               year="2025"
-              time="6:00 PM"
+              time="3:00 PM"
               location="10054 Spice Ln Dallas, TX 75217, EE. UU."
               className={`mb-8 transition-all duration-1000 transform ${
                 visibleElements.has('date-display') 
@@ -260,8 +260,8 @@ export default function HomePage() {
               onClick={() => {
                 const eventDetails = {
                   title: "Primer Año de Isabella Mariana",
-                  start: "20251010T180000",
-                  end: "20251010T230000",
+                  start: "20251010T150000",
+                  end: "20251010T200000",
                   location: "10054 Spice Ln Dallas, TX 75217, EE. UU.",
                   description: "🦁 Aventura Safari - Celebración del primer año de Isabella Mariana 🌿"
                 };

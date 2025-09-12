@@ -35,8 +35,11 @@ const EventDateDisplay: FC<EventDateDisplayProps> = ({
             <div className="text-gray-600 text-sm font-normal sm:font-medium uppercase tracking-wide mb-1">
               {dayName}
             </div>
-            <div className="text-4xl font-semibold sm:font-bold text-gray-800 mb-2">
+            <div className="text-4xl font-semibold sm:font-bold text-gray-800 mb-1">
               {dayNumber}
+            </div>
+            <div className="text-gray-600 text-sm font-normal sm:font-medium uppercase tracking-wide mb-2">
+              {monthName}
             </div>
             <div className="text-gray-600 text-sm font-normal sm:font-medium">
               {time}
