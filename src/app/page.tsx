@@ -397,7 +397,7 @@ export default function HomePage() {
                     <button 
                       onClick={() => {
                         const name = (document.getElementById('attendee-name') as HTMLInputElement)?.value || 'Invitado';
-                        const message = `🦁 Hola! Soy ${name} y confirmo mi asistencia a la aventura Safari de Isabella Marina el 15 de febrero a las 3:00 PM 🌿🦒 Nos vemos en la selva! 🐘🎉`;
+                        const message = `🦁 Hola! Soy ${name} y confirmo mi asistencia a la aventura Safari de Isabella Marina el 10 de octubre a las 3:00 PM 🌿🦒 Nos vemos en la selva! 🐘🎉`;
                         const whatsappUrl = `https://wa.me/13057837691?text=${encodeURIComponent(message)}`;
                         window.open(whatsappUrl, '_blank');
                       }}
