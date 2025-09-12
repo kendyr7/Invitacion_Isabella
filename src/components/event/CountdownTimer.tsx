@@ -60,15 +60,13 @@ const CountdownTimer: React.FC<CountdownTimerProps> = ({ targetDate }) => {
     const colors = ['#ff98c3', '#ffe900', '#ffbea2', '#2387e9', '#7fb717'];
 
     return (
-      <div className="flex justify-center gap-2 sm:gap-3 animate-in fade-in duration-1000 delay-500 w-full px-4">
+      <div className="flex justify-center gap-2 sm:gap-3 animate-in fade-in duration-1000 delay-500" style={{width: '97vw'}}>
         {['Days', 'Hours', 'Minutes', 'Seconds'].map((label, index) => (
           <div 
             key={index}
             className="flex flex-col items-center justify-center backdrop-blur-sm rounded-2xl shadow-lg p-3 sm:p-4 flex-1 max-w-[80px] sm:max-w-[100px] animate-pulse"
             style={{
-              backgroundColor: `${colors[index]}20`,
-              borderColor: `${colors[index]}40`,
-              borderWidth: '1px'
+              backgroundColor: `${colors[index]}20`
             }}
           >
             <span 
@@ -99,16 +97,14 @@ const CountdownTimer: React.FC<CountdownTimerProps> = ({ targetDate }) => {
   const colors = ['#ff98c3', '#ffe900', '#ffbea2', '#2387e9', '#7fb717'];
 
   return (
-    <div className="flex justify-center gap-2 sm:gap-3 animate-in fade-in duration-1000 delay-500 w-full px-4">
+    <div className="flex justify-center gap-2 sm:gap-3 animate-in fade-in duration-1000 delay-500" style={{width: '97vw'}}>
       {timerComponents.map((component, index) => (
         component.value !== undefined && (
           <div 
             key={index} 
             className="flex flex-col items-center justify-center backdrop-blur-sm rounded-2xl shadow-lg p-3 sm:p-4 flex-1 max-w-[80px] sm:max-w-[100px] transform transition-all duration-300 hover:scale-105 hover:shadow-xl"
             style={{
-              backgroundColor: `${colors[index]}20`,
-              borderColor: `${colors[index]}40`,
-              borderWidth: '1px'
+              backgroundColor: `${colors[index]}20`
             }}
           >
             <span 

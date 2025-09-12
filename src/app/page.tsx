@@ -272,20 +272,22 @@ export default function HomePage() {
                 let calendarUrl = '';
                 
                 if (isIOS) {
-                  // iOS Calendar URL
-                  const startDate = new Date('2025-10-10T18:00:00');
-                  const endDate = new Date('2025-10-10T23:00:00');
-                  calendarUrl = `data:text/calendar;charset=utf8,BEGIN:VCALENDAR
-VERSION:2.0
-BEGIN:VEVENT
-URL:${window.location.href}
-DTSTART:${eventDetails.start}
-DTEND:${eventDetails.end}
-SUMMARY:${eventDetails.title}
-DESCRIPTION:${eventDetails.description}
-LOCATION:${eventDetails.location}
-END:VEVENT
-END:VCALENDAR`;
+                  // iOS Calendar URL - Create proper .ics content
+                  const icsContent = [
+                    'BEGIN:VCALENDAR',
+                    'VERSION:2.0',
+                    'PRODID:-//Safari Event//EN',
+                    'BEGIN:VEVENT',
+                    `DTSTART:${eventDetails.start}`,
+                    `DTEND:${eventDetails.end}`,
+                    `SUMMARY:${eventDetails.title}`,
+                    `DESCRIPTION:${eventDetails.description}`,
+                    `LOCATION:${eventDetails.location}`,
+                    'END:VEVENT',
+                    'END:VCALENDAR'
+                  ].join('\r\n');
+                  
+                  calendarUrl = `data:text/calendar;charset=utf8,${encodeURIComponent(icsContent)}`;
                 } else if (isAndroid) {
                   // Android Calendar Intent
                   const startTime = new Date('2025-10-10T18:00:00').getTime();
@@ -323,7 +325,7 @@ END:VCALENDAR`;
               locationButtons={[
                 { 
                   text: "Waze", 
-                  url: "https://waze.com/ul?ll=32.6593,-96.8564&navigate=yes&zoom=17", 
+                  url: "https://waze.com/ul?q=10054%20Spice%20Ln%20Dallas%20TX%2075217&navigate=yes", 
                   icon: <Navigation className="mr-2 h-4 w-4" />
                 },
                 { 
