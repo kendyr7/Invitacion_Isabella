@@ -167,6 +167,10 @@ export default function HomePage() {
         />
         
         <div className="relative z-10 flex flex-col items-center text-center space-y-8 sm:space-y-10 p-4 sm:p-8 mt-8">
+          <p className="font-headline text-xl sm:text-2xl text-foreground tracking-wide animate-fade-in-up text-visible font-medium sm:font-normal">
+            Celebremos el primer año de
+          </p>
+          
           <div className="mb-6 sm:mb-8">
             <Image
               src="/isabella.jpg"
@@ -179,9 +183,7 @@ export default function HomePage() {
           </div>
           
         <div className="text-center mb-4">
-          <p className="font-headline text-xl sm:text-2xl text-foreground tracking-wide animate-fade-in-up text-visible font-medium sm:font-normal">
-            Celebremos el primer año de
-          </p>
+          
 
         {/* Disney effect wrapper */}
           <div className="disney-wrapper h-45 w-auto mx-auto mt-2">
@@ -211,6 +213,27 @@ export default function HomePage() {
           <div className="mb-8 flex justify-center">
             <MusicPlayer audioSrc={musicSrc} autoPlay={true} />
           </div>
+         
+          <Card 
+            id="countdown-section"
+            data-animate
+            className={`w-full max-w-md mt-12 mb-4 bg-transparent border-none transition-all duration-1000 transform ${
+              visibleElements.has('countdown-section') 
+                ? 'opacity-100 translate-y-0' 
+                : 'opacity-100 translate-y-0'
+            }`}
+          >
+            <CardContent className="flex flex-col items-center mt-12">
+              <p className="mb-12 font-headline text-lg sm:text-xl text-foreground mt-2 tracking-widest animate-fade-in-up text-visible">Tan solo faltan</p>
+              <CountdownTimer targetDate={eventTargetDate} />
+              <p className="font-headline text-lg sm:text-xl text-foreground mt-12 tracking-widest animate-fade-in-up text-visible">para este dia tan especial</p>
+            </CardContent>
+          </Card>
+
+          {/* Plim Jirafa Image */}
+          <div className="mb-8 flex justify-center">
+            <Image src="/Plim_jirafa.png" alt="Plim Jirafa" width={150} height={150} className="drop-shadow-lg animate-bounce-slow" />
+          </div>
                    
           <EventDateDisplay 
             data-id="date-display"
@@ -227,22 +250,6 @@ export default function HomePage() {
                 : 'opacity-100 translate-y-0 scale-100'
             }`}
           />
-          
-          <Card 
-            id="countdown-section"
-            data-animate
-            className={`w-full max-w-md mt-12 mb-4 bg-transparent border-none transition-all duration-1000 transform ${
-              visibleElements.has('countdown-section') 
-                ? 'opacity-100 translate-y-0' 
-                : 'opacity-100 translate-y-0'
-            }`}
-          >
-            <CardContent className="flex flex-col items-center mt-12">
-              <p className="mb-12 font-headline text-lg sm:text-xl text-foreground mt-2 tracking-widest animate-fade-in-up text-visible">Tan solo faltan</p>
-              <CountdownTimer targetDate={eventTargetDate} />
-              <p className="font-headline text-lg sm:text-xl text-foreground mt-12 tracking-widest animate-fade-in-up text-visible">para este dia tan especial</p>
-            </CardContent>
-          </Card>
 
           <div className="w-full animate-in fade-in duration-1000 delay-1100">
             <SectionCard 
