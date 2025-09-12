@@ -159,10 +159,10 @@ export default function HomePage() {
       </Head>
       <div className="relative z-10 flex flex-col items-center text-center max-w-2xl w-full bg-background/80 dark:bg-neutral-900/80 backdrop-blur-md rounded-xl shadow-2xl my-8 animate-in fade-in slide-in-from-bottom-10 duration-700 overflow-hidden border-2 border-[transparent] hover:border-[transparent] transition-colors duration-300">
         <Image 
-          src="/background1.png"
+          src="/background.png"
           fill
           alt="Elegant event background" 
-          className="absolute inset-0 z-[-1] opacity-5 filter object-cover rounded-xl"
+          className="absolute inset-0 z-[-1] opacity-40 filter object-cover rounded-xl"
           priority
           data-ai-hint="elegant background"
         />
