@@ -147,14 +147,14 @@ export default function HomePage() {
       ${isOpened && !isEnvelopeAnimating ? 'opacity-100' : 'opacity-0'}
     `}>
       <Head>
-        <meta property="og:title" content="🦁 Aventura Safari - Primer Año de Isabella Mariana 🌿" />
-        <meta property="og:description" content="🐘 Únete a la aventura Safari de Isabella Mariana el 10 de octubre a las 6:00 PM. Una celebración llena de diversión en la selva 🦒🎉" />
+        <meta property="og:title" content="🦁 Aventura Safari - Primer Año de Isabella Marina 🌿" />
+        <meta property="og:description" content="🐘 Únete a la aventura Safari de Isabella Marina el 10 de octubre a las 3:00 PM. Una celebración llena de diversión en la selva 🦒🎉" />
         <meta property="og:image" content="/safari.png" />
         <meta property="og:url" content="invitacion-xv-victoria.vercel.app/" />
         <meta property="og:type" content="website" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="🦁 Aventura Safari - Primer Año de Isabella Mariana 🌿" />
-        <meta name="twitter:description" content="🐘 Únete a la aventura Safari de Isabella Mariana el 10 de octubre a las 6:00 PM. Una celebración llena de diversión en la selva 🦒🎉" />
+        <meta name="twitter:title" content="🦁 Aventura Safari - Primer Año de Isabella Marina 🌿" />
+        <meta name="twitter:description" content="🐘 Únete a la aventura Safari de Isabella Marina el 10 de octubre a las 3:00 PM. Una celebración llena de diversión en la selva 🦒🎉" />
         <meta name="twitter:image" content="/safari.png" />
       </Head>
       <div className="relative z-10 flex flex-col items-center text-center max-w-2xl w-full bg-background/80 dark:bg-neutral-900/80 backdrop-blur-md rounded-xl shadow-2xl my-8 animate-in fade-in slide-in-from-bottom-10 duration-700 overflow-hidden border-2 border-[transparent] hover:border-[transparent] transition-colors duration-300">
@@ -259,11 +259,11 @@ export default function HomePage() {
             <Button
               onClick={() => {
                 const eventDetails = {
-                  title: "Primer Año de Isabella Mariana",
+                  title: "Primer Año de Isabella Marina",
                   start: "20251010T150000",
                   end: "20251010T200000",
                   location: "10054 Spice Ln Dallas, TX 75217, EE. UU.",
-                  description: "🦁 Aventura Safari - Celebración del primer año de Isabella Mariana 🌿"
+                  description: "🦁 Aventura Safari - Celebración del primer año de Isabella Marina 🌿"
                 };
                 
                 // Detect platform
@@ -351,7 +351,7 @@ export default function HomePage() {
               <div className="mt-1 space-y-1 text-center">
                 <p className="flex items-center justify-center animate-fade-in-up">10054 Spice Ln</p>
                 <p className="flex items-center justify-center animate-fade-in-up"><i>Dallas, TX 75217, EE. UU.</i></p>
-                <p className="flex items-center justify-center animate-fade-in-up"><i>6:00 PM</i></p>
+                <p className="flex items-center justify-center animate-fade-in-up"><i>3:00 PM</i></p>
               </div>
             </SectionCard>
           </div>
@@ -397,7 +397,7 @@ export default function HomePage() {
                     <button 
                       onClick={() => {
                         const name = (document.getElementById('attendee-name') as HTMLInputElement)?.value || 'Invitado';
-                        const message = `🦁 Hola! Soy ${name} y confirmo mi asistencia a la aventura Safari de Isabella Mariana el 15 de febrero a las 6:00 PM 🌿🦒 Nos vemos en la selva! 🐘🎉`;
+                        const message = `🦁 Hola! Soy ${name} y confirmo mi asistencia a la aventura Safari de Isabella Marina el 15 de febrero a las 3:00 PM 🌿🦒 Nos vemos en la selva! 🐘🎉`;
                         const whatsappUrl = `https://wa.me/13057837691?text=${encodeURIComponent(message)}`;
                         window.open(whatsappUrl, '_blank');
                       }}

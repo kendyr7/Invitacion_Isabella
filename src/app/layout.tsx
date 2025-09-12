@@ -21,12 +21,12 @@ const bodoniModa = Bodoni_Moda({
 });
 
 export const metadata: Metadata = {
-  title: '🦁 Aventura Safari - Cumpleaños Isabella Mariana 🌿',
-  description: '🐘 Únete a la aventura Safari de Isabella Mariana el 10 de octubre a las 3:00 PM. Una celebración llena de diversión en la selva 🦒🎉',
-  keywords: ['cumpleaños', 'safari', 'Isabella Mariana', 'invitación', 'fiesta', 'aventura', 'selva', 'animales'],
+  title: '🦁 Aventura Safari - Cumpleaños Isabella Marina 🌿',
+  description: '🐘 Únete a la aventura Safari de Isabella Marina el 10 de octubre a las 3:00 PM. Una celebración llena de diversión en la selva 🦒🎉',
+  keywords: ['cumpleaños', 'safari', 'Isabella Marina', 'invitación', 'fiesta', 'aventura', 'selva', 'animales'],
   authors: [{ name: 'Kendyr Quintanilla' }],
   creator: 'Kendyr Quintanilla',
-  publisher: 'Cumpleaños Safari Isabella Mariana',
+  publisher: 'Cumpleaños Safari Isabella Marina',
   formatDetection: {
     email: false,
     address: false,

@@ -19,7 +19,7 @@ const EventDateDisplay: FC<EventDateDisplayProps> = ({
   dayName,
   dayNumber,
   year,
-  time = "6:00 PM",
+  time = "3:00 PM",
   location = "10054 Spice Ln\nDallas, TX 75217, EE. UU.",
   rsvpInfo = "RSVP to\n+1(505)8888-9999",
   className,
