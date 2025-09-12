@@ -147,45 +147,70 @@ export default function HomePage() {
       ${isOpened && !isEnvelopeAnimating ? 'opacity-100' : 'opacity-0'}
     `}>
       <Head>
-        <meta property="og:title" content="Cumpleaños Isabella Mariana" />
-        <meta property="og:description" content="Te invitamos a celebrar con nosotros el primer año de Isabella" />
-        <meta property="og:image" content="/og-image.png" />
+        <meta property="og:title" content="🦁 Aventura Safari - Cumpleaños Isabella Mariana 🌿" />
+        <meta property="og:description" content="🐘 Únete a la aventura Safari de Isabella Mariana el 15 de febrero a las 6:00 PM. Una celebración llena de diversión en la selva 🦒🎉" />
+        <meta property="og:image" content="/safari.png" />
         <meta property="og:url" content="invitacion-xv-victoria.vercel.app/" />
         <meta property="og:type" content="website" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:image" content="/og-image.png" />
+        <meta name="twitter:title" content="🦁 Aventura Safari - Cumpleaños Isabella Mariana 🌿" />
+        <meta name="twitter:description" content="🐘 Únete a la aventura Safari de Isabella Mariana el 15 de febrero a las 6:00 PM. Una celebración llena de diversión en la selva 🦒🎉" />
+        <meta name="twitter:image" content="/safari.png" />
       </Head>
-      <Image 
-        src="/paper-texture1.jpg"
-        fill
-        alt="Elegant event background" 
-        className="absolute inset-0 z-[-1] opacity-20 filter blur-sm object-cover"
-        priority
-        data-ai-hint="elegant background"
-      />
-      
       <div className="relative z-10 flex flex-col items-center text-center max-w-2xl w-full bg-background/80 dark:bg-neutral-900/80 backdrop-blur-md rounded-xl shadow-2xl my-8 animate-in fade-in slide-in-from-bottom-10 duration-700 overflow-hidden border-2 border-[transparent] hover:border-[transparent] transition-colors duration-300">
-      
+        <Image 
+          src="/background1.png"
+          fill
+          alt="Elegant event background" 
+          className="absolute inset-0 z-[-1] opacity-5 filter object-cover rounded-xl"
+          priority
+          data-ai-hint="elegant background"
+        />
+        {/* Monkey image at top right */}
+        <div className="absolute top-0 right-4 z-10">
+          <Image 
+            src="/monkey.png" 
+            alt="Monkey" 
+            width={150} 
+            height={80} 
+            className="drop-shadow-lg animate-fade-in-up"
+          />
+        </div>
         
         <div className="relative z-10 flex flex-col items-center text-center space-y-8 sm:space-y-10 p-4 sm:p-8 mt-8">
           <div className="mb-6 sm:mb-8">
             <Image
               src="/isabella.jpg"
               alt="Isabella"
-              width={200}
-              height={200}
+              width={300}
+              height={300}
               className="rounded-full mx-auto shadow-lg animate-fade-in-up"
               priority
             />
           </div>
-          <p className="font-headline text-xl sm:text-2xl text-foreground mb-4 tracking-wide animate-fade-in-up text-visible font-medium sm:font-normal">
-            Celebremos el cumpleaños de
-          </p>
-          <AnimatedName 
+          
+<div className="text-center mb-4">
+  <p className="font-headline text-xl sm:text-2xl text-foreground tracking-wide animate-fade-in-up text-visible font-medium sm:font-normal">
+    Celebremos el cumpleaños de
+  </p>
+
+  {/* Disney effect wrapper */}
+  <div className="disney-wrapper h-45 w-auto mx-auto mt-2">
+    <img 
+      src="/fonts/Isabella.svg" 
+      alt="Isabella" 
+      className="disney-logo"
+    />
+  </div>
+</div>
+
+
+          
+          {/* <AnimatedName 
             firstName="Isabella"
             lastName="Mariana"
             className="mb-6 sm:mb-8"
-          />
+          /> */}
 
           <div 
             id="tiara-section"
@@ -210,7 +235,6 @@ export default function HomePage() {
             year="2025"
             time="6:00 PM"
             location="10054 Spice Ln Dallas, TX 75217, EE. UU."
-            rsvpInfo="+1(505)8888-9999"
             className={`mb-12 transition-all duration-1000 transform ${
               visibleElements.has('date-display') 
                 ? 'opacity-100 translate-y-0 scale-100' 
@@ -234,20 +258,9 @@ export default function HomePage() {
             </CardContent>
           </Card>
 
-          <Card className="bg-transparent border-none shadow-none w-full animate-in fade-in duration-1000 delay-600">
-            <CardHeader className="pb-3 pt-5">
-              <CardTitle className="font-headline text-2xl sm:text-3xl text-foreground flex items-center justify-center text-center">
-                ¿Cuándo y dónde?
-              </CardTitle>
-            </CardHeader>
-            <CardContent className="font-body text-lg sm:text-xl text-foreground/80 space-y-1 pt-6">
-            <p>A continuacion encontraras el horario y ubicacion de los eventos de mi fiesta, asi como un boton directo a Google Maps para que puedas llegar facilmente.</p>
-            </CardContent>
-          </Card>
-          
           <div className="w-full animate-in fade-in duration-1000 delay-1100">
             <SectionCard 
-              title="Recepción"
+              title=""
               locationButtons={[
                 { 
                   text: "Waze", 
@@ -262,8 +275,15 @@ export default function HomePage() {
               ]}
               titleClassName="text-foreground"
             >
-              <div className="flex flex-col items-center space-y-2 mb-3">
-                <Image src="/champagne.png" alt="champagne Icon" width={40} height={40} className="shrink-0 animate-bounce-slow" data-ai-hint="champagne"/>
+              {/* Safari image */}
+              <div className="flex flex-col items-center mb-2">
+                <Image 
+                  src="/safari.png" 
+                  alt="Safari" 
+                  width={320} 
+                  height={150} 
+                  className="drop-shadow-lg animate-fade-in-up"
+                />
               </div>
               <div className="mt-1 space-y-1 text-center">
                 <p className="flex items-center justify-center animate-fade-in-up">10054 Spice Ln</p>
@@ -279,38 +299,59 @@ export default function HomePage() {
               icon={<Gem size={28} className="text-foreground"/>}
               titleClassName="text-foreground"
             >
-              <p className="flex items-center justify-center gap-2 mb-4">
-                <span>Agradecemos sus muestras de cariño en sobre</span>
+              <p className="flex items-center justify-center gap-2">
+                <span>Amazon Link</span>
               </p>
               
-              {/* Animación del sobre */}
-              <div className="flex justify-center">
-                <div className="relative group">
-                  <Image 
-                    src="/envelope.png"
-                    alt="An envelope, click to open invitation"
-                    width={80}
-                    height={60}
-                    className="transition-all duration-500 ease-in-out group-hover:scale-110 group-hover:rotate-2 animate-pulse-slow"
-                  />
-                  
-                  {/* Efecto de brillo */}
-                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 ease-in-out transform -skew-x-12 translate-x-[-100%] group-hover:translate-x-[100%]"></div>
-                  
-                  {/* Icono de regalo flotante */}
-                  <div className="absolute -top-2 -right-2 bg-primary rounded-full p-1 animate-bounce-slow">
-                    <Gift className="h-4 w-4 text-primary-foreground" />
-                  </div>
+            </SectionCard>
+          </div>
+          
+          {/* Confirmation Section */}
+          <div className="w-full animate-in fade-in duration-1000 delay-[1800ms]">
+            <div className="rounded-lg border text-card-foreground w-full max-w-md bg-transparent border-none shadow-none animate-in fade-in duration-700 mx-auto">
+              <div className="flex flex-col space-y-1.5 p-6 pb-3 pt-5">
+                <div className="tracking-tight font-headline text-2xl font-semibold sm:text-3xl sm:font-bold flex items-center justify-center text-center text-foreground">
+                  <span className="mr-3 text-accent">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-check-circle text-foreground">
+                      <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                      <polyline points="22,4 12,14.01 9,11.01"/>
+                    </svg>
+                  </span>
+                  Confirmar Asistencia
                 </div>
               </div>
-            </SectionCard>
+              <div className="p-6 pt-0 font-body font-normal sm:text-lg text-white space-y-4 text-center">
+                <div className="space-y-3">
+                  <input 
+                    type="text" 
+                    placeholder="Ingresa tu nombre" 
+                    className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all duration-200 text-center font-body text-base"
+                    id="attendee-name"
+                  />
+                  <button 
+                    onClick={() => {
+                      const name = (document.getElementById('attendee-name') as HTMLInputElement)?.value || 'Invitado';
+                      const message = `🦁 Hola! Soy ${name} y confirmo mi asistencia a la aventura Safari de Isabella Mariana el 15 de febrero a las 6:00 PM 🌿🦒 Nos vemos en la selva! 🐘🎉`;
+                      const whatsappUrl = `https://wa.me/13057837691?text=${encodeURIComponent(message)}`;
+                      window.open(whatsappUrl, '_blank');
+                    }}
+                    className="w-full inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary hover:bg-primary/90 text-primary-foreground h-12 px-6 py-3"
+                  >
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="mr-2">
+                      <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
+                    </svg>
+                    Confirmar Asistencia
+                  </button>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
         
         <div 
           className="relative w-full bg-[url('/flowers_deco/flowers_deco.png')] bg-contain bg-no-repeat bg-bottom"
         >
-          <div className="flex flex-col items-center pt-10 pb-24 px-4">
+          <div className="flex flex-col items-center pt-4 pb-24 px-4">
             <div 
               id="confirmation-section"
               data-animate
@@ -330,7 +371,16 @@ export default function HomePage() {
                   : 'opacity-0 translate-y-8'
               }`}
             >
-              <p className="font-body text-lg sm:text-xl text-foreground/80 text-center px-4 animate-fade-in-up">¡Te esperamos! </p>
+              <div className="flex flex-col items-center">
+                <Image 
+                  src="/Plim2.png" 
+                  alt="Plim" 
+                  width={120} 
+                  height={120} 
+                  className="drop-shadow-lg animate-fade-in-up"
+                />
+              </div>
+              <p className="font-body text-lg sm:text-xl text-foreground/80 text-center animate-fade-in-up">¡Te esperamos! </p>
             </div>
           </div>
         </div>

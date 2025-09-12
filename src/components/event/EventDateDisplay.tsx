@@ -26,10 +26,10 @@ const EventDateDisplay: FC<EventDateDisplayProps> = ({
 }) => {
   return (
     <div className={cn("w-full max-w-md mx-auto", className)}>
-      {/* Card container with subtle shadow and rounded corners */}
-      <div className="bg-white/90 backdrop-blur-sm rounded-lg shadow-lg border border-gray-200/50 p-6">
+      {/* Card container without border and shadow */}
+      <div className=" backdrop-blur-sm rounded-lg p-6">
         {/* Two column layout with separator */}
-        <div className="flex justify-between items-start">
+        <div className="flex justify-between items-center">
           {/* Left side - Day, Date and Time */}
           <div className="flex-1">
             <div className="text-gray-600 text-sm font-normal sm:font-medium uppercase tracking-wide mb-1">
@@ -46,21 +46,18 @@ const EventDateDisplay: FC<EventDateDisplayProps> = ({
           {/* Vertical Separator Line */}
           <div className="w-px h-20 bg-gray-300 mx-6 self-center"></div>
           
-          {/* Right side - Address and Phone */}
-          <div className="flex-1 text-right">
-            <div className="text-gray-700 text-sm leading-relaxed mb-3">
+          {/* Right side - Address */}
+          <div className="flex-1 text-right flex flex-col justify-center">
+            <div className="text-gray-700 text-sm leading-relaxed">
               <div className="font-normal sm:font-medium mb-1">Ubicación:</div>
               <div className="whitespace-pre-line">{location}</div>
-            </div>
-            <div className="text-gray-600 text-xs leading-relaxed">
-              <div className="font-normal sm:font-medium mb-1">RSVP:</div>
-              <div className="whitespace-pre-line">{rsvpInfo}</div>
             </div>
           </div>
         </div>
       </div>
+      
     </div>
-  );
+    );
 };
 
 export default EventDateDisplay;

@@ -35,12 +35,14 @@ const SectionCard: React.FC<SectionCardProps> = ({ title, icon, children, locati
       className={`w-full max-w-md bg-transparent border-none shadow-none animate-in fade-in duration-700 mx-auto ${className}`} 
       style={{ animationDelay: animationDelay }}
     >
-      <CardHeader className="pb-3 pt-5">
-        <CardTitle className={`font-headline text-2xl font-semibold sm:text-3xl sm:font-bold text-primary flex items-center justify-center text-center ${titleClassName}`}>
-          {icon && <span className="mr-3 text-accent">{icon}</span>}
-          {title}
-        </CardTitle>
-      </CardHeader>
+      {title && (
+        <CardHeader className="pb-3 pt-5">
+          <CardTitle className={`font-headline text-2xl font-semibold sm:text-3xl sm:font-bold text-primary flex items-center justify-center text-center ${titleClassName}`}>
+            {icon && <span className="mr-3 text-accent">{icon}</span>}
+            {title}
+          </CardTitle>
+        </CardHeader>
+      )}
       <CardContent className={`font-body font-normal text-base sm:text-lg text-foreground/90 space-y-2 text-center ${contentClassName}`}>
         {children}
         {buttons.length > 0 && (

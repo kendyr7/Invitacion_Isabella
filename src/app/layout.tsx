@@ -21,12 +21,12 @@ const bodoniModa = Bodoni_Moda({
 });
 
 export const metadata: Metadata = {
-  title: 'Cumpleaños Isabella Mariana',
-  description: 'Te invitamos a celebrar con nosotros el primer año de Isabella',
-  keywords: ['XV años', 'quinceañera', 'Isabella Pérez', 'invitación', 'fiesta'],
+  title: '🦁 Aventura Safari - Cumpleaños Isabella Mariana 🌿',
+  description: '🐘 Únete a la aventura Safari de Isabella Mariana el 15 de febrero a las 6:00 PM. Una celebración llena de diversión en la selva 🦒🎉',
+  keywords: ['cumpleaños', 'safari', 'Isabella Mariana', 'invitación', 'fiesta', 'aventura', 'selva', 'animales'],
   authors: [{ name: 'Kendyr Quintanilla' }],
   creator: 'Kendyr Quintanilla',
-  publisher: 'XV Años Isabella Pérez',
+  publisher: 'Cumpleaños Safari Isabella Mariana',
   formatDetection: {
     email: false,
     address: false,

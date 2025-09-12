@@ -328,4 +328,80 @@ p, h1, h2, h3, h4, h5, h6, span, div {
   visibility: visible !important;
 }
 
+/* Custom color override - Safari green theme */
+/* Override all text colors except primary elements */
+body,
+p,
+span,
+div,
+h1, h2, h3, h4, h5, h6,
+.text-foreground,
+.text-gray-700,
+.font-body,
+input::placeholder {
+  color: #536944 !important;
+}
 
+/* Preserve primary colors */
+.text-primary,
+.bg-primary,
+.border-primary,
+.text-accent,
+.bg-accent,
+.text-secondary,
+.bg-secondary {
+  color: inherit !important;
+}
+
+/* Ensure ALL button text is white - highest specificity */
+button,
+button *,
+button span,
+button svg,
+button.bg-primary,
+button.bg-primary *,
+button.bg-primary span,
+button.bg-primary svg {
+  color: white !important;
+}
+
+/* Override input text color */
+input[type="text"] {
+  color: #536944 !important;
+}
+
+
+/* Wrapper to position glow/shimmer layers */
+.disney-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+/* Core logo styling */
+.disney-logo {
+  opacity: 0;
+  filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.9))
+          drop-shadow(0 0 20px rgba(0, 191, 255, 0.8));
+  animation: disney-reveal 4s ease forwards;
+}
+
+/* Animation sequence */
+@keyframes disney-reveal {
+  0% {
+    opacity: 0;
+    filter: blur(6px) drop-shadow(0 0 15px rgba(255, 255, 255, 1));
+    transform: scale(1.05);
+  }
+  40% {
+    opacity: 1;
+    filter: blur(3px) drop-shadow(0 0 25px rgba(250, 135, 173, 0.795));
+  }
+  70% {
+    filter: blur(1px) drop-shadow(0 0 15px rgba(255, 0, 140, 0.7));
+  }
+  100% {
+    opacity: 1;
+    filter: none;
+    transform: scale(1);
+  }
+}
