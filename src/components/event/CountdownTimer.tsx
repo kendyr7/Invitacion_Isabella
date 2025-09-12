@@ -57,27 +57,37 @@ const CountdownTimer: React.FC<CountdownTimerProps> = ({ targetDate }) => {
 
   if (!isClient) {
     // Render placeholder or skeleton on server/initial client render
+    const colors = ['#ff98c3', '#ffe900', '#ffbea2', '#2387e9', '#7fb717'];
+
     return (
-      <div className="inline-block text-center animate-in fade-in duration-1000 delay-500">
-        <span className="inline-block mx-3 sm:mx-4">
-          <span className="text-3xl sm:text-5xl font-bold text-foreground animate-pulse">--</span>
-          <span className="text-xs sm:text-sm text-foreground uppercase tracking-wider ml-1">Loading...</span>
-        </span>
-        <span className="inline-block mx-3 sm:mx-4">
-          <span className="text-3xl sm:text-5xl font-bold text-foreground animate-pulse">--</span>
-          <span className="text-xs sm:text-sm text-foreground uppercase tracking-wider ml-1">Loading...</span>
-        </span>
-        <span className="inline-block mx-3 sm:mx-4">
-          <span className="text-3xl sm:text-5xl font-bold text-foreground animate-pulse">--</span>
-          <span className="text-xs sm:text-sm text-foreground uppercase tracking-wider ml-1">Loading...</span>
-        </span>
-        <span className="inline-block mx-3 sm:mx-4">
-          <span className="text-3xl sm:text-5xl font-bold text-foreground animate-pulse">--</span>
-          <span className="text-xs sm:text-sm text-foreground uppercase tracking-wider ml-1">Loading...</span>
-        </span>
+      <div className="flex justify-center gap-2 sm:gap-3 animate-in fade-in duration-1000 delay-500 w-full px-4">
+        {['Days', 'Hours', 'Minutes', 'Seconds'].map((label, index) => (
+          <div 
+            key={index}
+            className="flex flex-col items-center justify-center backdrop-blur-sm rounded-2xl shadow-lg p-3 sm:p-4 flex-1 max-w-[80px] sm:max-w-[100px] animate-pulse"
+            style={{
+              backgroundColor: `${colors[index]}20`,
+              borderColor: `${colors[index]}40`,
+              borderWidth: '1px'
+            }}
+          >
+            <span 
+              className="text-xl sm:text-3xl font-bold leading-none mb-1"
+              style={{ color: colors[index] }}
+            >
+              00
+            </span>
+            <span 
+              className="text-xs sm:text-sm uppercase tracking-wider font-medium leading-none opacity-80"
+              style={{ color: colors[index] }}
+            >
+              {label}
+            </span>
+          </div>
+        ))}
       </div>
     );
- }
+  }
   
   const timerComponents = [
     { label: 'Dias', value: timeLeft.days },
@@ -86,18 +96,34 @@ const CountdownTimer: React.FC<CountdownTimerProps> = ({ targetDate }) => {
     { label: 'Seg', value: timeLeft.seconds },
   ];
 
+  const colors = ['#ff98c3', '#ffe900', '#ffbea2', '#2387e9', '#7fb717'];
+
   return (
-    <div className="inline-block text-center animate-in fade-in duration-1000 delay-500 w-full text-visible">
+    <div className="flex justify-center gap-2 sm:gap-3 animate-in fade-in duration-1000 delay-500 w-full px-4">
       {timerComponents.map((component, index) => (
         component.value !== undefined && (
-          <span key={index} className="inline-block mx-4 sm:mx-4 transform transition-all hover:scale-110">
-            <span className="text-3xl sm:text-5xl font-headline font-semibold sm:font-bold bg-gradient-to-r from-decorative-gradientFrom to-decorative-gradientTo text-transparent bg-clip-text text-visible">
+          <div 
+            key={index} 
+            className="flex flex-col items-center justify-center backdrop-blur-sm rounded-2xl shadow-lg p-3 sm:p-4 flex-1 max-w-[80px] sm:max-w-[100px] transform transition-all duration-300 hover:scale-105 hover:shadow-xl"
+            style={{
+              backgroundColor: `${colors[index]}20`,
+              borderColor: `${colors[index]}40`,
+              borderWidth: '1px'
+            }}
+          >
+            <span 
+              className="text-xl sm:text-3xl font-bold leading-none mb-1"
+              style={{ color: colors[index] }}
+            >
               {String(component.value).padStart(2, '0')}
             </span>
-            <span className="text-xs sm:text-sm text-foreground uppercase tracking-wider font-body text-visible font-medium sm:font-bold ml-1">
+            <span 
+              className="text-xs sm:text-sm uppercase tracking-wider font-medium leading-none opacity-80"
+              style={{ color: colors[index] }}
+            >
               {component.label}
             </span>
-          </span>
+          </div>
         )
       ))}
     </div>
