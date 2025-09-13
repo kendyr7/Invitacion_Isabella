@@ -377,6 +377,21 @@ export default function HomePage() {
             </SectionCard>
           </div>
           
+          {/* Safari Dress Code Section */}
+          <div className="w-full animate-in fade-in duration-1000 delay-[1700ms]">
+            <SectionCard 
+              title="Código de Vestimenta" 
+              icon={<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-foreground"><path d="M12 2a10 10 0 1 0 10 10c0-5.52-4.48-10-10-10z"/><path d="M12 6v6l4 2"/></svg>}
+              titleClassName="text-foreground"
+            >
+              <div className="text-center space-y-3">
+                <p className="text-foreground/90 text-base sm:text-lg">
+                  🦁 ¡Todos los niños deben venir vestidos para la aventura Safari! 🌿
+                </p>
+              </div>
+            </SectionCard>
+          </div>
+          
           {/* Confirmation Section */}
           <div className="w-full animate-in fade-in duration-1000 delay-[1800ms]">
             <div className="rounded-lg border text-card-foreground w-full max-w-md bg-transparent border-none shadow-none animate-in fade-in duration-700 mx-auto">
